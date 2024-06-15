@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+	background-color: #f6e6cd;
+	font-family: "Quicksand", sans-serif;
+}
+
+nav > div:first-child {
+	margin-left: 40px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	transition: transform 0.25s ease-in-out;
+}
+
+nav > div:first-child:hover {
+	cursor: pointer;
+	transform: perspective(400px) translateZ(20px);
+}
+
+nav > div:first-child > h2 {
+	font-family: "Russo One", sans-serif;
+	color: #f47726;
+}
+
+nav > div:last-child {
+	display: flex;
+	align-items: center;
+	gap: 35px;
+}
+
+nav ul {
+	display: flex;
+	gap: 35px;
+	list-style: none;
+}
+
+nav ul > li {
+	letter-spacing: 0.035em;
+	font-weight: 700;
+}
+
+nav > div:last-child > div {
+	border: 2px solid black;
+	border-radius: 20px;
+	padding: 10px 30px;
+	margin-right: 40px;
+}
+
+nav span {
+	letter-spacing: 0.1em;
+	font-weight: 700;
+}
+
+nav span:last-child {
+	color: #f47726;
+}
