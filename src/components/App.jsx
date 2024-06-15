@@ -1,7 +1,12 @@
+import Navbar from "./Navbar.jsx";
 import "./App.css";
 
 function App() {
-	return <h1>Shopping Cart</h1>;
+	return (
+		<>
+			<Navbar />
+		</>
+	);
 }
 
 export default App;
