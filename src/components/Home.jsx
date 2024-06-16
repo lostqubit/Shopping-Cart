@@ -1,10 +1,13 @@
+import { useState } from "react";
 import "./Home.css";
+import { useEffect } from "react";
 
 export default function Home() {
 	return (
 		<>
 			<Header />
 			<CollectionsHome />
+			<TrendingHome />
 		</>
 	);
 }
@@ -31,7 +34,7 @@ function Header() {
 function CollectionsHome() {
 	return (
 		<div className="collections-home">
-			<p>Collections</p>
+			<p>COLLECTIONS</p>
 			<h2>Our Collections</h2>
 			<div>
 				<p>Explore our collections for the newest trends and timeless pieces.</p>
@@ -66,6 +69,53 @@ function CollectionsHome() {
 					/>
 					<p>Electronics &#10230;</p>
 				</div>
+			</div>
+		</div>
+	);
+}
+
+function TrendingHome() {
+	const [trending, setTrending] = useState([]);
+
+	useEffect(() => {
+		const fetchTrending = async () => {
+			try {
+				const endpoint = "https://fakestoreapi.com/products/";
+				const ids = ["4", "17", "7", "14"];
+				const response = await Promise.all(ids.map((id) => fetch(endpoint + id)));
+				const data = await Promise.all(response.map((r) => r.json()));
+				setTrending(data);
+			} catch (e) {
+				console.log(e);
+				setTimeout(fetchTrending(), 100);
+			}
+		};
+
+		fetchTrending();
+	}, []);
+
+	return (
+		<div className="trending-home">
+			<p>TRENDING</p>
+			<h2>Trending Products</h2>
+			<div>
+				<p>Discover the hottest trends in tech, fashion and accessories.</p>
+				<button>View all</button>
+			</div>
+			<div>
+				{trending.map((product) => (
+					<div key={product.id}>
+						<img src={product.image} />
+						<p>
+							{product.id === 17
+								? "Women Rain Jacket"
+								: product.id === 14
+								? "Samsung Gaming Monitor"
+								: product.title}
+						</p>
+						<p>&#8377; {Math.round(product.price * 80)}</p>
+					</div>
+				))}
 			</div>
 		</div>
 	);
