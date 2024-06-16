@@ -50,37 +50,43 @@ header > img {
 	border-top-left-radius: 30%;
 }
 
-.collections-home {
+.collections-home,
+.trending-home {
 	padding: 50px;
 	margin-top: 20px;
 }
 
-.collections-home > p:first-child {
+.collections-home > p:first-child,
+.trending-home > p:first-child {
 	letter-spacing: 0.035em;
 	margin-bottom: 5px;
 }
 
-.collections-home > h2 {
+.collections-home > h2,
+.trending-home > h2 {
 	margin-bottom: 5px;
 	font-size: 48px;
 	letter-spacing: 0.01em;
 	font-family: "Russo One", sans-serif;
 }
 
-.collections-home > div:nth-child(3) {
+.collections-home > div:nth-child(3),
+.trending-home > div:nth-child(3) {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 50px;
 }
 
-.collections-home > div:nth-child(3) > p {
+.collections-home > div:nth-child(3) > p,
+.trending-home > div:nth-child(3) > p {
 	font-size: 18px;
 	letter-spacing: 0.035em;
 	display: flex;
 }
 
-.collections-home button {
+.collections-home button,
+.trending-home button {
 	letter-spacing: 0.1em;
 	padding: 10px 30px;
 	background-color: white;
@@ -89,27 +95,32 @@ header > img {
 	transition: transform 0.25s ease-in-out;
 }
 
-.collections-home button:hover {
+.collections-home button:hover,
+.trending-home button:hover {
 	cursor: pointer;
 	transform: perspective(400px) translateZ(20px);
 }
 
-.collections-home > div:last-child {
+.collections-home > div:last-child,
+.trending-home > div:last-child {
 	display: flex;
 	gap: 20px;
 }
 
-.collections-home > div > div {
+.collections-home > div > div,
+.trending-home > div > div {
 	width: calc((100% - 60px) / 4);
 	transition: transform 0.25s ease-in-out;
 }
 
-.collections-home > div > div:hover {
+.collections-home > div > div:hover,
+.trending-home > div > div:hover {
 	transform: perspective(400px) translateZ(10px);
 	cursor: pointer;
 }
 
-.collections-home > div > div > img {
+.collections-home > div > div > img,
+.trending-home > div > div > img {
 	object-fit: cover;
 	width: 100%;
 	aspect-ratio: 1 / 1;
@@ -117,8 +128,29 @@ header > img {
 	margin-bottom: 5px;
 }
 
+.trending-home > div > div > img {
+	box-sizing: border-box;
+	padding: 15%;
+	object-fit: contain;
+	aspect-ratio: 1 / 1;
+	border: 2px solid black;
+}
+
 .collections-home > div > div > p {
 	font-size: 18px;
 	font-weight: 500;
+	letter-spacing: 0.035em;
+}
+
+.trending-home > div > div > p:nth-child(2) {
+	font-size: 18px;
+	font-weight: 500;
+	letter-spacing: 0.035em;
+	margin-bottom: 5px;
+}
+
+.trending-home > div > div > p:last-child {
+	font-size: 20px;
+	font-weight: 700;
 	letter-spacing: 0.035em;
 }
