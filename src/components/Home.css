@@ -49,3 +49,76 @@ header > img {
 	height: 100%;
 	border-top-left-radius: 30%;
 }
+
+.collections-home {
+	padding: 50px;
+	margin-top: 20px;
+}
+
+.collections-home > p:first-child {
+	letter-spacing: 0.035em;
+	margin-bottom: 5px;
+}
+
+.collections-home > h2 {
+	margin-bottom: 5px;
+	font-size: 48px;
+	letter-spacing: 0.01em;
+	font-family: "Russo One", sans-serif;
+}
+
+.collections-home > div:nth-child(3) {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 50px;
+}
+
+.collections-home > div:nth-child(3) > p {
+	font-size: 18px;
+	letter-spacing: 0.035em;
+	display: flex;
+}
+
+.collections-home button {
+	letter-spacing: 0.1em;
+	padding: 10px 30px;
+	background-color: white;
+	border: 3px solid black;
+	border-radius: 40px;
+	transition: transform 0.25s ease-in-out;
+}
+
+.collections-home button:hover {
+	cursor: pointer;
+	transform: perspective(400px) translateZ(20px);
+}
+
+.collections-home > div:last-child {
+	display: flex;
+	gap: 20px;
+}
+
+.collections-home > div > div {
+	width: calc((100% - 60px) / 4);
+	transition: transform 0.25s ease-in-out;
+}
+
+.collections-home > div > div:hover {
+	transform: perspective(400px) translateZ(10px);
+	cursor: pointer;
+}
+
+.collections-home > div > div > img {
+	object-fit: cover;
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	border-radius: 10px;
+	margin-bottom: 5px;
+}
+
+.collections-home > div > div > p {
+	font-size: 18px;
+	font-weight: 500;
+	letter-spacing: 0.035em;
+}
