@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./Home.css";
 import { useEffect } from "react";
+import Footer from "./Footer.jsx";
 
 export default function Home() {
 	return (
@@ -9,6 +10,7 @@ export default function Home() {
 			<CollectionsHome />
 			<TrendingHome />
 			<Newsletter />
+			<Footer />
 		</>
 	);
 }
