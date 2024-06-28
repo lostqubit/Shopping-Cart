@@ -31,9 +31,6 @@ header button {
 	padding: 10px 20px;
 	border-radius: 20px;
 	border: none;
-	font-family: "Quicksand", sans-serif;
-	letter-spacing: 0.1em;
-	color: white;
 	background: #f47726;
 	opacity: 0.9;
 	transition: all 0.25s ease-in-out;
@@ -43,6 +40,12 @@ header button:hover {
 	cursor: pointer;
 	transform: perspective(400px) translateZ(20px);
 	opacity: 1;
+}
+
+header a {
+	font-family: "Quicksand", sans-serif;
+	letter-spacing: 0.1em;
+	color: white;
 }
 
 header > img {
