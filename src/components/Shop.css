@@ -1,0 +1,121 @@
+.shop-header {
+	padding: 50px;
+	margin-top: 60px;
+	margin-bottom: 60px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.shop-header > p:first-child {
+	letter-spacing: 0.035em;
+	line-height: 1.5em;
+}
+
+.shop-header > h2 {
+	font-size: 48px;
+	line-height: 1.2em;
+	letter-spacing: 0.01em;
+	font-family: "Russo One", sans-serif;
+}
+
+.shop-header > p:last-child {
+	font-size: 18px;
+	line-height: 1.5em;
+	letter-spacing: 0.035em;
+}
+
+.shop-collections {
+	padding: 50px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+}
+
+.shop-collections > div:first-child > div {
+	padding: 50px 30px;
+	width: 628px;
+	box-shadow: -10px 0 10px -5px rgba(0, 0, 0, 0.1), 10px 0 10px -5px rgba(0, 0, 0, 0.1);
+}
+
+.shop-collections > div:first-child > div > p:first-child {
+	letter-spacing: 0.035em;
+	line-height: 1.5em;
+	margin-bottom: 10px;
+}
+
+.shop-collections > div:first-child > div > h2 {
+	font-size: 40px;
+	line-height: 1.2em;
+	letter-spacing: 0.01em;
+	font-family: "Russo One", sans-serif;
+	margin-bottom: 20px;
+}
+
+.shop-collections > div:first-child > div > p:nth-child(3) {
+	line-height: 1.5em;
+	letter-spacing: 0.035em;
+	margin-bottom: 20px;
+}
+
+.shop-collections button {
+	letter-spacing: 0.1em;
+	padding: 10px 20px;
+	background-color: white;
+	border: 3px solid black;
+	border-radius: 40px;
+	transition: transform 0.25s ease-in-out;
+}
+
+.shop-collections button:hover {
+	cursor: pointer;
+	transform: perspective(100px) translateZ(8px);
+}
+
+.shop-collections > div:first-child > img {
+	object-fit: cover;
+	width: 688px;
+	height: 375px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.shop-collections > div:last-child {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	gap: 20px;
+}
+
+.shop-collections > div:last-child > div > div {
+	padding: 15px;
+	width: 304px;
+	box-shadow: -10px 0 10px -5px rgba(0, 0, 0, 0.1), 10px 0 10px -5px rgba(0, 0, 0, 0.1);
+}
+
+.shop-collections > div:last-child p:first-child {
+	line-height: 1.5em;
+	letter-spacing: 0.035em;
+	margin-bottom: 2px;
+}
+
+.shop-collections > div:last-child h2 {
+	font-size: 24px;
+	font-family: "Russo One", sans-serif;
+	margin-bottom: 2px;
+	line-height: 1.4em;
+	letter-spacing: 0.01em;
+}
+
+.shop-collections > div:last-child p:nth-child(3) {
+	margin-bottom: 11px;
+	line-height: 1.5em;
+	letter-spacing: 0.035em;
+}
+
+.shop-collections > div:last-child > div > img {
+	object-fit: cover;
+	width: 334px;
+	height: 150px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
