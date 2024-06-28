@@ -1,4 +1,5 @@
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
 	return (
@@ -6,14 +7,24 @@ export default function Footer() {
 			<Newsletter />
 			<footer>
 				<div>
-					<h2>URBAN FUSION</h2>
-					<h3>Shop Smart, Shop Now.</h3>
+					<Link to="/">
+						<h2>URBAN FUSION</h2>
+						<h3>Shop Smart, Shop Now.</h3>
+					</Link>
 				</div>
 				<ul>
-					<li>Home</li>
-					<li>Shop</li>
-					<li>About</li>
-					<li>Contact</li>
+					<li>
+						<Link to="/">Home</Link>
+					</li>
+					<li>
+						<Link to="/shop">Shop</Link>
+					</li>
+					<li>
+						<Link to="/about">About</Link>
+					</li>
+					<li>
+						<Link to="/contact">Contact</Link>
+					</li>
 				</ul>
 				<div>
 					<a href="https://github.com/lostqubit" target="_blank">

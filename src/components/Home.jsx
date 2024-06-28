@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Home.css";
 import { useEffect } from "react";
-
+import { Link } from "react-router-dom";
 
 export default function Home() {
 	return (
@@ -25,7 +25,9 @@ function Header() {
 					tech, we offer unique pieces that combine quality with cutting-edge design. Explore our collection
 					today and find your signature look. Ready to redefine your style?
 				</p>
-				<button>Start Shopping</button>
+				<button>
+					<Link to="/shop">Start Shopping</Link>
+				</button>
 			</div>
 			<img src="https://images.unsplash.com/photo-1574634534894-89d7576c8259?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
 		</header>
@@ -39,7 +41,9 @@ function CollectionsHome() {
 			<h2>Our Collections</h2>
 			<div>
 				<p>Explore our collections for the newest trends and timeless pieces.</p>
-				<button>View all</button>
+				<button>
+					<Link to="/shop">View all</Link>
+				</button>
 			</div>
 			<div>
 				<div>
