@@ -2,7 +2,7 @@ import App from "./components/App.jsx";
 import Home from "./components/Home.jsx";
 import Shop from "./components/Shop.jsx";
 import Products from "./components/Products.jsx";
-import productsLoader from "./components/loaders.js";
+import productsLoader from "./loaders.jsx";
 
 const routes = [
 	{
