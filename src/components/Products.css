@@ -1,0 +1,81 @@
+.products-header {
+	padding: 50px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.products-header > h2 {
+	font-size: 48px;
+	line-height: 1.2em;
+	letter-spacing: 0.01em;
+	font-family: "Russo One", sans-serif;
+}
+
+.products-header > p {
+	max-width: 1000px;
+	text-align: center;
+	font-size: 18px;
+	line-height: 1.5em;
+	letter-spacing: 0.035em;
+}
+
+.navigation {
+	padding: 0px 50px;
+	line-height: 1.5em;
+	letter-spacing: 0.035em;
+}
+
+.navigation > span:nth-child(2) {
+	color: #f47726;
+	font-weight: 700;
+}
+
+.navigation > span:last-child {
+	font-weight: 700;
+}
+
+.cards {
+	padding: 50px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 50px;
+	justify-content: center;
+}
+
+.card {
+	width: 300px;
+	transition: transform 0.25s ease-in-out;
+}
+
+.card:hover {
+	cursor: pointer;
+	transform: perspective(100px) translateZ(5px);
+}
+
+.card > img {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 15%;
+	object-fit: contain;
+	aspect-ratio: 1 / 1;
+	border: 2px solid black;
+	border-radius: 10px;
+	margin-bottom: 5px;
+}
+
+.card > p:nth-child(2) {
+	font-size: 18px;
+	letter-spacing: 0.035em;
+	line-height: 1.5em;
+	font-weight: 500;
+}
+
+.card > p:last-child {
+	font-size: 20px;
+	line-height: 1.5em;
+	letter-spacing: 0.035em;
+	font-weight: 700;
+}
