@@ -41,9 +41,10 @@ function CollectionsHome() {
 			<h2>Our Collections</h2>
 			<div>
 				<p>Explore our collections for the newest trends and timeless pieces.</p>
-				<button>
-					<Link to="/shop">View all</Link>
-				</button>
+
+				<Link to="/shop">
+					<button>View all</button>
+				</Link>
 			</div>
 			<div>
 				<div>
@@ -105,7 +106,10 @@ function TrendingHome() {
 			<h2>Trending Products</h2>
 			<div>
 				<p>Discover the hottest trends in tech, fashion and accessories.</p>
-				<button>View all</button>
+
+				<Link to="/products/all">
+					<button>View all</button>
+				</Link>
 			</div>
 			<div>
 				{trending.map((product) => (
