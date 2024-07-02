@@ -2,7 +2,8 @@ import App from "./components/App.jsx";
 import Home from "./components/Home.jsx";
 import Shop from "./components/Shop.jsx";
 import Products from "./components/Products.jsx";
-import productsLoader from "./loaders.jsx";
+import ProductPage from "./components/ProductPage.jsx";
+import productsLoader, { productLoader } from "./loaders.jsx";
 
 const routes = [
 	{
@@ -21,6 +22,11 @@ const routes = [
 				path: "/products/:category",
 				element: <Products />,
 				loader: productsLoader,
+			},
+			{
+				path: "/products/:category/:id",
+				element: <ProductPage />,
+				loader: productLoader,
 			},
 		],
 	},
