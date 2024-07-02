@@ -1,0 +1,123 @@
+.product-page {
+	padding: 50px;
+}
+
+.product-page > p:first-child a:hover {
+	border-bottom: 1px solid #252525;
+}
+
+.product-page > p:first-child > span:first-child {
+	font-size: 14px;
+	line-height: 1.5em;
+	letter-spacing: 0.035em;
+}
+
+.product-page > p:first-child > span:nth-child(2) {
+	color: #f47726;
+	font-weight: 700;
+}
+
+.product-page > p:first-child > span:last-child {
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 1.5em;
+	letter-spacing: 0.035em;
+}
+
+.product-content {
+	margin-top: 20px;
+	display: flex;
+	gap: 50px;
+}
+
+.product-content > div:first-child {
+	width: 400px;
+	flex-shrink: 0;
+}
+
+.product-content > div:first-child > img {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 10%;
+	object-fit: contain;
+	aspect-ratio: 4 / 5;
+	border: 2px solid black;
+	border-radius: 10px;
+}
+
+.product-content > div:last-child > p:first-child {
+	font-size: 40px;
+	font-weight: 700;
+	line-height: 1.2em;
+	letter-spacing: 0.035em;
+	overflow-wrap: break-word;
+	margin-bottom: 10px;
+}
+
+.product-content > div:last-child > p:nth-child(2) {
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 1.4em;
+	letter-spacing: 0.035em;
+	margin-bottom: 10px;
+}
+
+.rating {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 1.5em;
+	letter-spacing: 0.035em;
+	margin-bottom: 10px;
+}
+
+.product-content > div:last-child > p:nth-child(4) {
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 1.5em;
+	letter-spacing: 0.035em;
+}
+
+.addToCart {
+	margin-top: 30px;
+	display: flex;
+	gap: 50px;
+}
+
+.addToCart > div:first-child {
+	background-color: #edf6f9;
+	display: flex;
+	align-items: center;
+	gap: 50px;
+	padding: 13px;
+	border-radius: 8px;
+}
+
+.addToCart > div:first-child img:hover {
+	cursor: pointer;
+}
+
+.addToCart > div:first-child > span {
+	font-weight: 700;
+}
+
+.addToCart > div:last-child {
+	background-color: rgba(255, 126, 27, 0.9);
+	color: black;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-weight: 700;
+	padding: 13px 70px;
+	border-radius: 8px;
+	transition: all 0.25s ease-in-out;
+}
+
+.addToCart > div:last-child:hover {
+	background-color: rgba(255, 126, 27, 0.8);
+	cursor: pointer;
+	transform: scale(1.03);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
