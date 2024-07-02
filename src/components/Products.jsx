@@ -56,11 +56,18 @@ export default function Products() {
 }
 
 function ProductCard({ product }) {
+	let category;
+	if (product.category === "electronics") category = product.category;
+	else if (product.category === "jewelery") category = "jewellery";
+	else if (product.category === "men's clothing") category = "men%27s%20fashion";
+	else category = "women%27s%20fashion";
 	return (
-		<div className="card">
-			<img src={product.image} />
-			<p>{product.title}</p>
-			<p>&#8377; {Math.round(product.price * 80)}</p>
-		</div>
+		<Link to={`/products/${category}/${product.id}`}>
+			<div className="card">
+				<img src={product.image} />
+				<p>{product.title}</p>
+				<p>&#8377; {Math.round(product.price * 80)}</p>
+			</div>
+		</Link>
 	);
 }
