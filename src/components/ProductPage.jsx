@@ -1,4 +1,4 @@
-import { useLoaderData, Link, useParams } from "react-router-dom";
+import { useLoaderData, Link, useParams, useOutletContext } from "react-router-dom";
 import plusIcon from "../assets/plus.svg";
 import minusIcon from "../assets/minus.svg";
 import cartIcon from "../assets/cart.svg";
@@ -9,6 +9,7 @@ import Rating from "@mui/material/Rating";
 export default function ProductPage() {
 	const { category, id } = useParams();
 	const { data } = useLoaderData();
+	const [cartItems, setCartItems] = useOutletContext();
 	return (
 		<div className="product-page">
 			<p>
@@ -46,15 +47,38 @@ export default function ProductPage() {
 						</p>
 					</div>
 					<p>{data.description.slice(0, 1).toUpperCase() + data.description.slice(1)}</p>
-					<AddtoCart />
+					<AddtoCart product={data} cartItems={cartItems} setCartItems={setCartItems} />
 				</div>
 			</div>
 		</div>
 	);
 }
 
-function AddtoCart() {
-	const [quantity, setQuantity] = useState(0);
+function AddtoCart({ product, cartItems, setCartItems }) {
+	const [quantity, setQuantity] = useState(1);
+
+	const addItem = () => {
+		if (quantity > 0) {
+			const updatedCart = [];
+			let flag = 0;
+			for (let item of cartItems) {
+				if (item.id === product.id) {
+					item.quantity += quantity;
+					flag = 1;
+				}
+				updatedCart.push(item);
+			}
+			if (!flag)
+				updatedCart.push({
+					id: product.id,
+					name: product.title,
+					image: product.image,
+					quantity: quantity,
+					price: product.price,
+				});
+			setCartItems(updatedCart);
+		}
+	};
 
 	return (
 		<div className="addToCart">
@@ -63,7 +87,7 @@ function AddtoCart() {
 				<span>{quantity}</span>
 				<img src={plusIcon} onClick={() => setQuantity((qty) => qty + 1)} />
 			</div>
-			<div>
+			<div onClick={addItem}>
 				<img src={cartIcon} />
 				<p>Add to cart</p>
 			</div>
