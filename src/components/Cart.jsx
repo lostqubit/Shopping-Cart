@@ -43,12 +43,15 @@ function CartItem({ item, cartItems, setCartItems }) {
 	const [cartQuantity, setCartQuantity] = useState(item.quantity);
 	useEffect(() => {
 		if (cartQuantity === 0) {
-			setCartItems(cartItems.filter((cartItem) => cartItem.id !== item.id));
+			const filteredCart = cartItems.filter((cartItem) => cartItem.id !== item.id);
+			localStorage.setItem("cart", JSON.stringify(filteredCart));
+			setCartItems(filteredCart);
 		} else {
 			const updatedCart = [...cartItems];
 			updatedCart.forEach((cartItem, index) => {
 				if (cartItem.id === item.id) updatedCart[index].quantity = cartQuantity;
 			});
+			localStorage.setItem("cart", JSON.stringify(updatedCart));
 			setCartItems(updatedCart);
 		}
 	}, [cartQuantity]);

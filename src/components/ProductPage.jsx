@@ -76,6 +76,7 @@ function AddtoCart({ product, cartItems, setCartItems }) {
 					quantity: quantity,
 					price: product.price,
 				});
+			localStorage.setItem("cart", JSON.stringify(updatedCart));
 			setCartItems(updatedCart);
 		}
 	};
