@@ -1,0 +1,138 @@
+.cart {
+	padding: 50px;
+	line-height: 1.5em;
+	letter-spacing: 0.035em;
+    padding-bottom: 60px;
+}
+
+.cart > div:first-child {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 50px;
+}
+
+.cart > div:first-child > h2 {
+	font-family: "Russo One", sans-serif;
+	font-size: 30px;
+	letter-spacing: 0.01em;
+}
+
+.cart > div:first-child > p {
+	border-bottom: 1px solid black;
+	transition: all 0.25s ease-in-out;
+}
+
+.cart > div:first-child > p:hover {
+	border-bottom: 2px solid black;
+}
+
+.cart-content {
+	display: grid;
+	grid-template-columns: 4fr 1fr 1fr;
+	row-gap: 50px;
+}
+
+.cart-content > p {
+	border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+	padding-bottom: 10px;
+	font-weight: 500;
+}
+
+.cart-item {
+	display: flex;
+	gap: 50px;
+}
+
+.cart-item p {
+	max-width: 500px;
+}
+
+.cart-item > img {
+	width: 130px;
+	box-sizing: border-box;
+	padding: 10px;
+	object-fit: contain;
+	aspect-ratio: 1 / 1;
+	border: 2px solid black;
+	border-radius: 10px;
+}
+
+.cart-item > div > p:first-child {
+	font-size: 18px;
+	font-weight: 500;
+	margin-bottom: 8px;
+}
+
+.cart-item > div > p:first-child:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.cart-quantity + div {
+	margin-top: 10px;
+	font-weight: 600;
+}
+
+.cart-quantity {
+	height: 15px;
+	width: max-content;
+	background-color: #edf6f9;
+	display: flex;
+	align-items: center;
+	gap: 30px;
+	padding: 13px;
+	border-radius: 8px;
+}
+
+.cart-quantity > img:hover {
+	cursor: pointer;
+}
+
+.cart-quantity > span {
+	font-weight: 600;
+}
+
+.cart > div:last-child {
+	margin-top: 50px;
+	border-top: 2px solid rgba(0, 0, 0, 0.5);
+	padding-top: 70px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 10px;
+}
+
+.cart > div:last-child > p:first-child {
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.cart > div:last-child span {
+	margin-left: 10px;
+	font-weight: 700;
+}
+
+.cart > div:last-child > p:nth-child(2) {
+	font-size: 12px;
+}
+
+.cart > div:last-child button {
+	background-color: rgba(255, 126, 27, 0.9);
+	color: black;
+	padding: 15px 130px;
+	border-radius: 8px;
+	border: none;
+    font-family: "Quicksand";
+    font-size: 15px;
+	font-weight: 700;
+	letter-spacing: 0.035em;
+	transition: all 0.25s ease-in-out;
+}
+
+.cart > div:last-child button:hover {
+	background-color: rgba(255, 126, 27, 0.8);
+	cursor: pointer;
+	transform: scale(1.03);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
