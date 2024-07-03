@@ -48,7 +48,8 @@ nav ul > li {
 	font-weight: 700;
 }
 
-nav > div:last-child > div {
+nav > div:last-child > a {
+	display: block;
 	border: 2px solid black;
 	border-radius: 20px;
 	padding: 10px 30px;
