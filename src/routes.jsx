@@ -3,6 +3,7 @@ import Home from "./components/Home.jsx";
 import Shop from "./components/Shop.jsx";
 import Products from "./components/Products.jsx";
 import ProductPage from "./components/ProductPage.jsx";
+import Cart from "./components/Cart.jsx";
 import productsLoader, { productLoader } from "./loaders.jsx";
 
 const routes = [
@@ -27,6 +28,10 @@ const routes = [
 				path: "/products/:category/:id",
 				element: <ProductPage />,
 				loader: productLoader,
+			},
+			{
+				path: "/cart",
+				element: <Cart />,
 			},
 		],
 	},
