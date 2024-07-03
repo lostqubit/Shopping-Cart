@@ -48,32 +48,40 @@ function CollectionsHome() {
 			</div>
 			<div>
 				<div>
-					<img
-						src="https://images.unsplash.com/photo-1527010154944-f2241763d806?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-						alt="Men's Fashion"
-					/>
-					<p>Men&apos;s Fashion &#10230;</p>
+					<Link to="/products/men%27s%20fashion">
+						<img
+							src="https://images.unsplash.com/photo-1527010154944-f2241763d806?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+							alt="Men's Fashion"
+						/>
+						<p>Men&apos;s Fashion &#10230;</p>
+					</Link>
 				</div>
 				<div>
-					<img
-						src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-						alt="Women's Fashion"
-					/>
-					<p>Women&apos;s Fashion &#10230;</p>
+					<Link to="/products/women%27s%20fashion">
+						<img
+							src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+							alt="Women's Fashion"
+						/>
+						<p>Women&apos;s Fashion &#10230;</p>
+					</Link>
 				</div>
 				<div>
-					<img
-						src="https://images.unsplash.com/photo-1610454958462-571795784d98?q=80&w=1852&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-						alt="Jewellery"
-					/>
-					<p>Jewellery &#10230;</p>
+					<Link to="/products/jewellery">
+						<img
+							src="https://images.unsplash.com/photo-1610454958462-571795784d98?q=80&w=1852&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+							alt="Jewellery"
+						/>
+						<p>Jewellery &#10230;</p>
+					</Link>
 				</div>
 				<div>
-					<img
-						src="https://images.unsplash.com/photo-1589894404892-7310b92ea7a2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-						alt="Electronics"
-					/>
-					<p>Electronics &#10230;</p>
+					<Link to="/products/electronics">
+						<img
+							src="https://images.unsplash.com/photo-1589894404892-7310b92ea7a2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+							alt="Electronics"
+						/>
+						<p>Electronics &#10230;</p>
+					</Link>
 				</div>
 			</div>
 		</div>
@@ -114,15 +122,27 @@ function TrendingHome() {
 			<div>
 				{trending.map((product) => (
 					<div key={product.id}>
-						<img src={product.image} />
-						<p>
-							{product.id === 17
-								? "Women Rain Jacket"
-								: product.id === 14
-								? "Samsung Gaming Monitor"
-								: product.title}
-						</p>
-						<p>&#8377; {Math.round(product.price * 80)}</p>
+						<Link
+							to={`products/${
+								product.category === "men's clothing"
+									? "men%27s%20fashion"
+									: product.category === "women's clothing"
+									? "women%27s%20fashion"
+									: product.category === "jewelery"
+									? "jewellery"
+									: product.category
+							}/${product.id}`}
+						>
+							<img src={product.image} />
+							<p>
+								{product.id === 17
+									? "Women Rain Jacket"
+									: product.id === 14
+									? "Samsung Gaming Monitor"
+									: product.title}
+							</p>
+							<p>&#8377; {Math.round(product.price * 80)}</p>
+						</Link>
 					</div>
 				))}
 			</div>

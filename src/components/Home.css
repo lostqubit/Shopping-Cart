@@ -122,8 +122,8 @@ header > img {
 	cursor: pointer;
 }
 
-.collections-home > div > div > img,
-.trending-home > div > div > img {
+.collections-home > div > div img,
+.trending-home > div > div img {
 	object-fit: cover;
 	width: 100%;
 	aspect-ratio: 1 / 1;
@@ -131,7 +131,7 @@ header > img {
 	margin-bottom: 5px;
 }
 
-.trending-home > div > div > img {
+.trending-home > div > div img {
 	box-sizing: border-box;
 	padding: 15%;
 	object-fit: contain;
@@ -139,20 +139,20 @@ header > img {
 	border: 2px solid black;
 }
 
-.collections-home > div > div > p {
+.collections-home > div > div p {
 	font-size: 18px;
 	font-weight: 500;
 	letter-spacing: 0.035em;
 }
 
-.trending-home > div > div > p:nth-child(2) {
+.trending-home > div > div p:nth-child(2) {
 	font-size: 18px;
 	font-weight: 500;
 	letter-spacing: 0.035em;
 	margin-bottom: 5px;
 }
 
-.trending-home > div > div > p:last-child {
+.trending-home > div > div p:last-child {
 	font-size: 20px;
 	font-weight: 700;
 	letter-spacing: 0.035em;

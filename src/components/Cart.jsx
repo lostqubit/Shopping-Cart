@@ -60,7 +60,9 @@ function CartItem({ item, cartItems, setCartItems }) {
 			<div className="cart-item">
 				<img src={item.image} />
 				<div>
-					<p>{item.name}</p>
+					<p>
+						<Link to={item.link}>{item.name}</Link>
+					</p>
 					<p>&#8377; {Math.round(item.price * 80)}</p>
 				</div>
 			</div>

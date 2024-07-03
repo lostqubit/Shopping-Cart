@@ -75,6 +75,15 @@ function AddtoCart({ product, cartItems, setCartItems }) {
 					image: product.image,
 					quantity: quantity,
 					price: product.price,
+					link: `/products/${
+						product.category === "men's clothing"
+							? "men%27s%20fashion"
+							: product.category === "women's clothing"
+							? "women%27s%20fashion"
+							: product.category === "jewelery"
+							? "jewellery"
+							: product.category
+					}/${product.id}`,
 				});
 			localStorage.setItem("cart", JSON.stringify(updatedCart));
 			setCartItems(updatedCart);
