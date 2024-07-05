@@ -32,6 +32,8 @@ nav > div:first-child h2 {
 }
 
 nav > div:last-child {
+	position: relative;
+	z-index: 9998;
 	display: flex;
 	align-items: center;
 	gap: 35px;
@@ -61,6 +63,122 @@ nav span {
 	font-weight: 700;
 }
 
-nav span:last-child {
+nav span:nth-child(2) {
 	color: #f47726;
+}
+
+.cart-update {
+	background-color: white;
+	padding: 15px;
+	position: absolute;
+	z-index: 9999;
+	top: 60px;
+	right: 50px;
+	border-radius: 5px;
+	box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.1), 5px 5px 10px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-update > div:first-child {
+	display: flex;
+	gap: 80px;
+	justify-content: space-between;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #dcdcdc;
+}
+
+.cart-update > div:first-child > div {
+	display: flex;
+	align-items: center;
+	font-size: 14px;
+	gap: 10px;
+	line-height: 1.5em;
+	letter-spacing: 0.035em;
+}
+
+.cart-update > div:first-child p {
+	font-weight: 600;
+}
+
+.cart-update > div:first-child > div > img {
+	height: 20px;
+}
+
+.cart-update > div:first-child > img {
+	height: 30px;
+}
+
+.cart-update > div:first-child > img:hover {
+	cursor: pointer;
+}
+
+.cart-update > div:nth-child(2) {
+	margin-top: 15px;
+	display: flex;
+	gap: 10px;
+	justify-content: space-between;
+	font-size: 14px;
+	line-height: 1.5em;
+	letter-spacing: 0.035em;
+}
+
+.cart-update > div:nth-child(2) > div {
+	display: flex;
+	gap: 10px;
+}
+
+.cart-update > div:nth-child(2) img:first-child {
+	height: 50px;
+}
+
+.cart-update > div:nth-child(2) p:first-of-type {
+	font-weight: 400;
+}
+
+.cart-update span {
+	font-weight: 700;
+	color: #252525;
+}
+
+.cart-update > div:nth-child(2) > img:last-child {
+	margin-right: 7px;
+	height: 20px;
+	align-self: center;
+}
+
+.cart-update > div:nth-child(2) > img:last-child:hover {
+	cursor: pointer;
+}
+
+.cart-update button {
+	margin-top: 15px;
+	width: 100%;
+	padding: 10px;
+	background-color: rgba(255, 126, 27, 0.9);
+	color: black;
+	border-radius: 8px;
+	border: none;
+	font-family: "Quicksand", sans-serif;
+	letter-spacing: 0.01em;
+	line-height: 1.2em;
+	font-weight: 700;
+	transition: all 0.25s ease-in-out;
+}
+
+.cart-update button:hover {
+	background-color: rgba(255, 126, 27, 0.8);
+	cursor: pointer;
+	transform: scale(1.03);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.cart-update > p {
+	font-size: 14px;
+	line-height: 1.5em;
+	letter-spacing: 0.035em;
+	text-align: center;
+	text-decoration: underline;
+}
+
+.cart-update > p:hover {
+	cursor: pointer;
 }
