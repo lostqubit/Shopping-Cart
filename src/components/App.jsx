@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 
 function App() {
 	const [cartItems, setCartItems] = useState([]);
+	const [addedItem, setAddedItem] = useState(null);
 
 	useEffect(() => {
 		if (localStorage.getItem("cart")) {
@@ -15,8 +16,13 @@ function App() {
 
 	return (
 		<>
-			<Navbar cartItems={cartItems} />
-			<Outlet context={[cartItems, setCartItems]} />
+			<Navbar
+				cartItems={cartItems}
+				setCartItems={setCartItems}
+				addedItem={addedItem}
+				setAddedItem={setAddedItem}
+			/>
+			<Outlet context={[cartItems, setCartItems, setAddedItem]} />
 			<Footer />
 		</>
 	);

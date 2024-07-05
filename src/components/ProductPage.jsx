@@ -9,7 +9,7 @@ import Rating from "@mui/material/Rating";
 export default function ProductPage() {
 	const { category, id } = useParams();
 	const { data } = useLoaderData();
-	const [cartItems, setCartItems] = useOutletContext();
+	const [cartItems, setCartItems, setAddedItem] = useOutletContext();
 	return (
 		<div className="product-page">
 			<p>
@@ -47,29 +47,36 @@ export default function ProductPage() {
 						</p>
 					</div>
 					<p>{data.description.slice(0, 1).toUpperCase() + data.description.slice(1)}</p>
-					<AddtoCart product={data} cartItems={cartItems} setCartItems={setCartItems} />
+					<AddtoCart
+						product={data}
+						cartItems={cartItems}
+						setCartItems={setCartItems}
+						setAddedItem={setAddedItem}
+					/>
 				</div>
 			</div>
 		</div>
 	);
 }
 
-function AddtoCart({ product, cartItems, setCartItems }) {
+function AddtoCart({ product, cartItems, setCartItems, setAddedItem }) {
 	const [quantity, setQuantity] = useState(1);
 
 	const addItem = () => {
 		if (quantity > 0) {
 			const updatedCart = [];
 			let flag = 0;
+			let addedItem;
 			for (let item of cartItems) {
 				if (item.id === product.id) {
 					item.quantity += quantity;
 					flag = 1;
+					addedItem = item;
 				}
 				updatedCart.push(item);
 			}
-			if (!flag)
-				updatedCart.push({
+			if (!flag) {
+				addedItem = {
 					id: product.id,
 					name: product.title,
 					image: product.image,
@@ -84,9 +91,13 @@ function AddtoCart({ product, cartItems, setCartItems }) {
 							? "jewellery"
 							: product.category
 					}/${product.id}`,
-				});
+				};
+				updatedCart.push(addedItem);
+			}
 			localStorage.setItem("cart", JSON.stringify(updatedCart));
 			setCartItems(updatedCart);
+			setAddedItem(addedItem);
+			setQuantity(1);
 		}
 	};
 
@@ -97,7 +108,7 @@ function AddtoCart({ product, cartItems, setCartItems }) {
 				<span>{quantity}</span>
 				<img src={plusIcon} onClick={() => setQuantity((qty) => qty + 1)} />
 			</div>
-			<div onClick={addItem}>
+			<div className="addToCart-btn" onClick={addItem}>
 				<img src={cartIcon} />
 				<p>Add to cart</p>
 			</div>
