@@ -182,3 +182,107 @@ nav span:nth-child(2) {
 .cart-update > p:hover {
 	cursor: pointer;
 }
+
+/* mobile style */
+
+.nav-mobile > img {
+	margin-left: 40px;
+	height: 30px;
+}
+
+.nav-mobile > div:nth-child(2) {
+	transition: transform 0.25s ease-in-out;
+}
+
+.nav-mobile > div:nth-child(2):hover {
+	cursor: pointer;
+	transform: perspective(400px) translateZ(20px);
+}
+
+.nav-mobile > div:nth-child(2) > a {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.nav-mobile > div:nth-child(2) h2 {
+	font-family: "Russo One", sans-serif;
+	color: #f47726;
+}
+
+.nav-mobile > div:last-child {
+	gap: 0px;
+}
+
+.nav-mobile > div:last-child > a {
+	padding: 0px;
+	border: none;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.nav-mobile > div:last-child > a > span {
+	align-self: flex-end;
+	color: #f47726;
+	font-size: 15px;
+	margin-top: -10px;
+}
+
+.nav-mobile > div:last-child > a > img {
+	height: 30px;
+	margin-top: -10px;
+}
+
+.nav-menu {
+	z-index: 1000;
+	background-color: white;
+	height: 100%;
+	padding-top: 10px;
+	padding-left: 50px;
+	padding-right: 130px;
+	position: fixed;
+	left: -100%;
+	transition: all 0.4s ease-in-out;
+}
+
+.menu-open {
+	left: 0;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+}
+
+.nav-menu > ul {
+	height: 100%;
+	list-style: none;
+	display: flex;
+	gap: 30px;
+	flex-direction: column;
+}
+
+.nav-menu ul > li {
+	letter-spacing: 0.035em;
+	font-weight: 600;
+}
+
+@media (max-width: 600px) {
+	.nav-mobile > div:nth-child(2) h2 {
+		font-size: 20px;
+	}
+
+	.nav-mobile > div:nth-child(2) h3 {
+		font-size: 16px;
+	}
+
+	.nav-mobile > img {
+		margin-left: 0px;
+	}
+
+	.nav-mobile > div:last-child > a {
+		margin-right: 0px;
+	}
+
+	.nav-menu {
+		padding-left: 10px;
+		padding-right: 80px;
+	}
+}
