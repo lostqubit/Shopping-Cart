@@ -10,6 +10,23 @@ nav {
 	font-family: "Quicksand", sans-serif;
 }
 
+.sticky {
+	z-index: 10000;
+	position: fixed;
+	right: 0;
+	left: 0;
+	animation: slideDown 0.4s ease-in;
+}
+
+@keyframes slideDown {
+	from {
+		transform: translateY(-100%);
+	}
+	to {
+		transform: translateZ(0%);
+	}
+}
+
 nav > div:first-child {
 	margin-left: 40px;
 	transition: transform 0.25s ease-in-out;
@@ -243,6 +260,7 @@ nav span:nth-child(2) {
 	padding-right: 130px;
 	position: fixed;
 	left: -100%;
+	top: 72px;
 	transition: all 0.4s ease-in-out;
 }
 
@@ -284,5 +302,6 @@ nav span:nth-child(2) {
 	.nav-menu {
 		padding-left: 10px;
 		padding-right: 80px;
+		top: 64px;
 	}
 }

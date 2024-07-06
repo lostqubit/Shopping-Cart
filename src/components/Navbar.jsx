@@ -9,7 +9,18 @@ import { useEffect, useState } from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 export default function Navbar({ cartItems, setCartItems, addedItem, setAddedItem }) {
+	const [isSticky, setIsSticky] = useState(false);
 	const isMobile = useMediaQuery("(max-width:850px)");
+
+	const slideIn = () => {
+		const currentScroll = document.querySelector("#root").scrollTop;
+		if (!isSticky) {
+			if (currentScroll > 80) setIsSticky(true);
+		} else {
+			if (currentScroll <= 80) setIsSticky(false);
+		}
+	};
+
 	const handleModalClose = (event) => {
 		if (event.target.id === "viewCart-btn") {
 			setAddedItem(null);
@@ -17,10 +28,6 @@ export default function Navbar({ cartItems, setCartItems, addedItem, setAddedIte
 		}
 		if (!event.target.closest(".cart-update") && !event.target.closest(".addToCart-btn")) setAddedItem(null);
 	};
-	useEffect(() => {
-		if (addedItem) document.addEventListener("click", handleModalClose);
-		return () => document.removeEventListener("click", handleModalClose);
-	}, [addedItem]);
 
 	const deleteItem = () => {
 		const updatedCart = cartItems.filter((item) => item.id !== addedItem.id);
@@ -29,15 +36,27 @@ export default function Navbar({ cartItems, setCartItems, addedItem, setAddedIte
 		setAddedItem(null);
 	};
 
+	useEffect(() => {
+		if (addedItem) document.addEventListener("click", handleModalClose);
+		return () => document.removeEventListener("click", handleModalClose);
+	}, [addedItem]);
+
+	useEffect(() => {
+		const root = document.querySelector("#root");
+		root.addEventListener("scroll", slideIn);
+		return () => root.removeEventListener("scroll", slideIn);
+	}, [isSticky]);
+
 	return isMobile ? (
 		<MobileNavbar
 			addedItem={addedItem}
 			setAddedItem={setAddedItem}
 			deleteItem={deleteItem}
 			numItems={cartItems.length}
+			isSticky={isSticky}
 		/>
 	) : (
-		<nav>
+		<nav className={isSticky ? "sticky" : ""}>
 			<div>
 				<Link to="/">
 					<h2>URBAN FUSION</h2>
@@ -107,9 +126,8 @@ function CartUpdate({ addedItem, setAddedItem, numItems, deleteItem }) {
 	);
 }
 
-function MobileNavbar({ addedItem, setAddedItem, deleteItem, numItems }) {
+function MobileNavbar({ addedItem, setAddedItem, deleteItem, numItems, isSticky }) {
 	const [menuOpen, setMenuOpen] = useState(false);
-
 	const closeMenu = (event) => {
 		if (event.target.closest("li")) {
 			setMenuOpen(false);
@@ -125,7 +143,7 @@ function MobileNavbar({ addedItem, setAddedItem, deleteItem, numItems }) {
 
 	return (
 		<>
-			<nav className="nav-mobile">
+			<nav className={`nav-mobile${isSticky ? " sticky" : ""}`}>
 				<img src={menuOpen ? closeIcon : menuIcon} onClick={() => setMenuOpen((status) => !status)} />
 				<div>
 					<Link to="/">
@@ -148,7 +166,7 @@ function MobileNavbar({ addedItem, setAddedItem, deleteItem, numItems }) {
 					)}
 				</div>
 			</nav>
-			<div className={`nav-menu ${menuOpen && "menu-open"}`}>
+			<div className={`nav-menu${menuOpen ? " menu-open" : ""}`}>
 				<ul>
 					<li>
 						<Link to="/">Home</Link>
