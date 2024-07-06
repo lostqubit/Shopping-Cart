@@ -131,3 +131,51 @@ footer img {
 	cursor: pointer;
 	text-decoration: underline;
 }
+
+@media (max-width: 600px) {
+	.newsletter > h2 {
+		font-size: 35px;
+	}
+
+	.newsletter > p:nth-child(2) {
+		font-size: 14px;
+	}
+
+	.newsletter > p:last-child {
+		font-size: 12px;
+	}
+
+	.newsletter input {
+		width: 200px;
+	}
+
+	.newsletter button {
+		font-size: 12px;
+	}
+
+	footer {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
+
+@media (max-width: 460px) {
+	.newsletter input {
+		width: 150px;
+	}
+
+	.newsletter button {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
+@media (max-width: 380px) {
+	.newsletter > div {
+		gap: 5px;
+	}
+
+	.newsletter input {
+		width: 120px;
+	}
+}
