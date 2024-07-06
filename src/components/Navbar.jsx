@@ -3,9 +3,13 @@ import { Link } from "react-router-dom";
 import checkIcon from "../assets/check.svg";
 import closeIcon from "../assets/close.svg";
 import deleteIcon from "../assets/delete.svg";
-import { useEffect } from "react";
+import menuIcon from "../assets/menu.svg";
+import mobileCartIcon from "../assets/mobile-cart.svg";
+import { useEffect, useState } from "react";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 export default function Navbar({ cartItems, setCartItems, addedItem, setAddedItem }) {
+	const isMobile = useMediaQuery("(max-width:850px)");
 	const handleModalClose = (event) => {
 		if (event.target.id === "viewCart-btn") {
 			setAddedItem(null);
@@ -25,7 +29,14 @@ export default function Navbar({ cartItems, setCartItems, addedItem, setAddedIte
 		setAddedItem(null);
 	};
 
-	return (
+	return isMobile ? (
+		<MobileNavbar
+			addedItem={addedItem}
+			setAddedItem={setAddedItem}
+			deleteItem={deleteItem}
+			numItems={cartItems.length}
+		/>
+	) : (
 		<nav>
 			<div>
 				<Link to="/">
@@ -93,5 +104,66 @@ function CartUpdate({ addedItem, setAddedItem, numItems, deleteItem }) {
 			</Link>
 			<p onClick={() => setAddedItem(null)}>Continue shopping</p>
 		</div>
+	);
+}
+
+function MobileNavbar({ addedItem, setAddedItem, deleteItem, numItems }) {
+	const [menuOpen, setMenuOpen] = useState(false);
+
+	const closeMenu = (event) => {
+		if (event.target.closest("li")) {
+			setMenuOpen(false);
+			return;
+		}
+		if (!event.target.closest(".nav-menu") && !event.target.closest("nav")) setMenuOpen(false);
+	};
+
+	useEffect(() => {
+		if (menuOpen) document.addEventListener("click", closeMenu);
+		return () => document.removeEventListener("click", closeMenu);
+	}, [menuOpen]);
+
+	return (
+		<>
+			<nav className="nav-mobile">
+				<img src={menuOpen ? closeIcon : menuIcon} onClick={() => setMenuOpen((status) => !status)} />
+				<div>
+					<Link to="/">
+						<h2>URBAN FUSION</h2>
+						<h3>Shop Smart, Shop Now.</h3>
+					</Link>
+				</div>
+				<div>
+					<Link to="/cart">
+						<span>{numItems}</span>
+						<img src={mobileCartIcon} />
+					</Link>
+					{addedItem && (
+						<CartUpdate
+							addedItem={addedItem}
+							setAddedItem={setAddedItem}
+							numItems={numItems}
+							deleteItem={deleteItem}
+						/>
+					)}
+				</div>
+			</nav>
+			<div className={`nav-menu ${menuOpen && "menu-open"}`}>
+				<ul>
+					<li>
+						<Link to="/">Home</Link>
+					</li>
+					<li>
+						<Link to="/shop">Shop</Link>
+					</li>
+					<li>
+						<Link to="/about">About</Link>
+					</li>
+					<li>
+						<Link to="/contact">Contact</Link>
+					</li>
+				</ul>
+			</div>
+		</>
 	);
 }
