@@ -32,6 +32,7 @@
 	padding: 50px;
 	display: flex;
 	gap: 80px;
+	justify-content: center;
 }
 
 .about-content h2 {
@@ -47,6 +48,7 @@
 	font-size: 18px;
 	line-height: 1.5em;
 	letter-spacing: 0.035em;
+	max-width: 764px;
 }
 
 .about-content > div > p:nth-child(2) {

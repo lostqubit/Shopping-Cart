@@ -6,6 +6,7 @@ header {
 	height: calc(100% - 72px);
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	gap: 100px;
 }
 
@@ -50,7 +51,7 @@ header a {
 }
 
 header > img {
-	height: 100%;
+	height: min(100%, 1300px);
 	border-top-left-radius: 30%;
 }
 
