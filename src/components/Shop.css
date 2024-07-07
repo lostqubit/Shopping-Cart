@@ -17,12 +17,14 @@
 	line-height: 1.2em;
 	letter-spacing: 0.01em;
 	font-family: "Russo One", sans-serif;
+	text-align: center;
 }
 
 .shop-header > p:last-child {
 	font-size: 18px;
 	line-height: 1.5em;
 	letter-spacing: 0.035em;
+	text-align: center;
 }
 
 .shop-collections {
@@ -83,7 +85,7 @@
 .shop-collections > div:last-child {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr 1fr;
+	grid-auto-rows: 1fr;
 	gap: 20px;
 }
 
@@ -118,4 +120,42 @@
 	width: 334px;
 	height: 150px;
 	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 800px) {
+	.shop-collections > div:first-child {
+		width: 100%;
+	}
+
+	.shop-collections > div:first-child > div {
+		width: calc(100% - 60px);
+	}
+
+	.shop-collections > div:first-child > img {
+		width: 100%;
+		height: auto;
+	}
+
+	.shop-collections > div:last-child {
+		width: 100%;
+	}
+
+	.shop-collections > div:last-child > div {
+		width: 100%;
+	}
+
+	.shop-collections > div:last-child > div > div {
+		width: calc(100% - 30px);
+	}
+
+	.shop-collections > div:last-child > div > img {
+		width: 100%;
+		height: 150px;
+	}
+}
+
+@media (max-width: 640px) {
+	.shop-collections > div:last-child {
+		grid-template-columns: 1fr;
+	}
 }
