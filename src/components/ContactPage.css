@@ -1,7 +1,7 @@
 .contact-content {
 	padding: 50px;
 	display: flex;
-	flex-wrap: wrap;
+	flex-wrap: wrap-reverse;
 	gap: 120px;
 	justify-content: center;
 }
@@ -146,4 +146,25 @@
 	text-decoration: underline;
 	letter-spacing: 0.035em;
 	line-height: 1.5em;
+}
+
+@media (max-width: 700px) {
+	.contact-content > div:first-child {
+		width: 100%;
+	}
+
+	.contact-content img {
+		height: auto;
+		width: 100%;
+	}
+}
+
+@media (max-width: 500px) {
+	.contact-content h2 {
+		font-size: 40px;
+	}
+
+	.contact-content p {
+		font-size: 14px;
+	}
 }
