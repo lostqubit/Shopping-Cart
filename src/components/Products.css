@@ -12,6 +12,7 @@
 	line-height: 1.2em;
 	letter-spacing: 0.01em;
 	font-family: "Russo One", sans-serif;
+    text-align: center;
 }
 
 .products-header > p {
@@ -78,4 +79,10 @@
 	line-height: 1.5em;
 	letter-spacing: 0.035em;
 	font-weight: 700;
+}
+
+@media (max-width: 400px){
+    .card{
+        width: 250px;
+    }
 }
