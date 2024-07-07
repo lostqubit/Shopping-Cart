@@ -1,5 +1,5 @@
 # Shopping Cart
-A Fully functional mock-up of an e-commerce website built with React and React Router. The project focuses on full frontend functionalities of an e-commerce website with products fetched dynamically from an external API ([Fake Store API](https://fakestoreapi.com/docs)), useState and useOutletContext hooks used for cart state management and local storage used to persist the cart state across browser sessions.
+A Fully functional and responsive mock-up of an e-commerce website built with React and React Router. The project focuses on full frontend functionalities of an e-commerce website with products fetched dynamically from an external API ([Fake Store API](https://fakestoreapi.com/docs)), useState and useOutletContext hooks used for cart state management and local storage used to persist the cart state across browser sessions.
 
 live demo - https://shopping-cart-delta-silk.vercel.app/
 
@@ -14,6 +14,10 @@ Product Catalog:
 Product Page:
 
 ![image](https://github.com/lostqubit/Shopping-Cart/assets/31575513/b9447887-0c92-4d5a-880f-bd9ac09d53ac)
+
+Add to Cart:
+
+![image](https://github.com/lostqubit/Shopping-Cart/assets/31575513/1d6dbe3e-19ce-4162-bf13-cea608562758)
 
 Cart:
 
