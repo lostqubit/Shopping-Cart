@@ -121,7 +121,9 @@ function CartUpdate({ addedItem, setAddedItem, numItems, deleteItem }) {
 			<Link to="/cart">
 				<button id="viewCart-btn">View Cart ({numItems})</button>
 			</Link>
-			<p onClick={() => setAddedItem(null)}>Continue shopping</p>
+			<p onClick={() => setAddedItem(null)}>
+				<Link to="/products/all">Continue shopping</Link>
+			</p>
 		</div>
 	);
 }
