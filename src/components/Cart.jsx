@@ -3,9 +3,11 @@ import { useEffect, useState } from "react";
 import plusIcon from "../assets/plus.svg";
 import minusIcon from "../assets/minus.svg";
 import "./Cart.css";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 export default function Cart() {
 	const [cartItems, setCartItems] = useOutletContext();
+	const isMobile = useMediaQuery("(max-width:750px)");
 	let total = 0;
 	let items = 0;
 	for (let cartItem of cartItems) {
@@ -22,10 +24,16 @@ export default function Cart() {
 			</div>
 			<div className="cart-content">
 				<p>PRODUCT</p>
-				<p>QUANTITY</p>
+				{!isMobile && <p>QUANTITY</p>}
 				<p>TOTAL</p>
 				{cartItems.map((item) => (
-					<CartItem key={item.id} item={item} cartItems={cartItems} setCartItems={setCartItems} />
+					<CartItem
+						key={item.id}
+						item={item}
+						cartItems={cartItems}
+						setCartItems={setCartItems}
+						isMobile={isMobile}
+					/>
 				))}
 			</div>
 			<div>
@@ -39,8 +47,9 @@ export default function Cart() {
 	);
 }
 
-function CartItem({ item, cartItems, setCartItems }) {
+function CartItem({ item, cartItems, setCartItems, isMobile }) {
 	const [cartQuantity, setCartQuantity] = useState(item.quantity);
+
 	useEffect(() => {
 		if (cartQuantity === 0) {
 			const filteredCart = cartItems.filter((cartItem) => cartItem.id !== item.id);
@@ -64,9 +73,10 @@ function CartItem({ item, cartItems, setCartItems }) {
 						<Link to={item.link}>{item.name}</Link>
 					</p>
 					<p>&#8377; {Math.round(item.price * 80)}</p>
+					{isMobile && <Quantity cartQuantity={cartQuantity} setCartQuantity={setCartQuantity} />}
 				</div>
 			</div>
-			<Quantity cartQuantity={cartQuantity} setCartQuantity={setCartQuantity} />
+			{!isMobile && <Quantity cartQuantity={cartQuantity} setCartQuantity={setCartQuantity} />}
 			<div>&#8377; {Math.round(cartQuantity * item.price * 80)}</div>
 		</>
 	);
