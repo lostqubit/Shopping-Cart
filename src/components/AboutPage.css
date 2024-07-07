@@ -64,3 +64,46 @@
 	flex-direction: column;
 	justify-content: center;
 }
+
+@media (max-width: 1350px) {
+	.about-content {
+		flex-wrap: wrap-reverse;
+		justify-content: center;
+	}
+}
+
+@media (max-width: 800px) {
+	.about-header h1 {
+		font-size: 40px;
+	}
+
+	.about-header > p {
+		font-size: 14px;
+	}
+
+	.about-content img {
+		width: 100%;
+	}
+
+	.about-content h2 {
+		font-size: 40px;
+	}
+
+	.about-content p {
+		font-size: 16px;
+	}
+}
+
+@media (max-width: 500px) {
+	.about-header h1 {
+		font-size: 36px;
+	}
+
+	.about-content h2 {
+		font-size: 36px;
+	}
+
+	.about-content p {
+		font-size: 14px;
+	}
+}
