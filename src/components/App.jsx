@@ -3,6 +3,7 @@ import Navbar from "./Navbar.jsx";
 import Footer from "./Footer.jsx";
 import "./App.css";
 import { useEffect, useState } from "react";
+import ScrollToTop from "../scrollReset.jsx";
 
 function App() {
 	const [cartItems, setCartItems] = useState([]);
@@ -16,6 +17,7 @@ function App() {
 
 	return (
 		<>
+			<ScrollToTop />
 			<Navbar
 				cartItems={cartItems}
 				setCartItems={setCartItems}
