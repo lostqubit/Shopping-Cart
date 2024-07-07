@@ -89,7 +89,7 @@ nav span:nth-child(2) {
 	padding: 15px;
 	position: absolute;
 	z-index: 9999;
-	top: 60px;
+	top: 57px;
 	right: 50px;
 	border-radius: 5px;
 	box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.1), 5px 5px 10px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.1);
@@ -282,6 +282,13 @@ nav span:nth-child(2) {
 	font-weight: 600;
 }
 
+@media (max-width: 850px) {
+	.cart-update {
+		top: 50px;
+		width: 400px;
+	}
+}
+
 @media (max-width: 600px) {
 	.nav-mobile > div:nth-child(2) h2 {
 		font-size: 20px;
@@ -303,5 +310,29 @@ nav span:nth-child(2) {
 		padding-left: 10px;
 		padding-right: 80px;
 		top: 64px;
+	}
+
+	.cart-update {
+		top: 46px;
+		right: 0px;
+		width: 320px;
+	}
+}
+
+@media (max-width: 400px) {
+	.cart-update {
+		width: 250px;
+	}
+
+	.cart-update > div:first-child {
+		gap: 20px;
+	}
+
+	.cart-update > div:first-child p {
+		font-size: 12px;
+	}
+
+	.cart-update > div:nth-child(2) p:first-of-type {
+		font-size: 13px;
 	}
 }
